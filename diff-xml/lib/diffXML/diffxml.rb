@@ -1,4 +1,4 @@
-require "diffXML/version"
+require 'version'
 
 module DiffXML
   def self.compareXML
