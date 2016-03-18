@@ -1,7 +1,7 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'diff/xml/version'
+require 'diffXML/xml/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "diff-xml"
@@ -9,9 +9,9 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Jake Bubnar"]
   spec.email         = ["jake@pjbapps.com"]
 
-  spec.summary       = %q{TODO: Write a short summary, because Rubygems requires one.}
-  spec.description   = %q{TODO: Write a longer description or delete this line.}
-  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
+  spec.summary       = 'A simple xml comparison tool to get a list of diffs between two files passed to it'
+  spec.description   = 'Goes through each child to find the paths, and compares them to the path in the second file'
+  spec.homepage      = 'https://github.com/pbubnar/diff-xml'
 
   # Prevent pushing this gem to RubyGems.org by setting 'allowed_push_host', or
   # delete this section to allow pushing this gem to any host.
