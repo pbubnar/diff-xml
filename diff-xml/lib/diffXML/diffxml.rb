@@ -2,7 +2,7 @@ require "diffXML/version"
 
 module DiffXML
   def self.compareXML
-    
+
   end
 
   def self.getPath
