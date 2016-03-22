@@ -1,9 +1,10 @@
-require 'version'
+# require 'version'
 require 'Nokogiri'
 
 module DiffXML
   @xpathArray = []
   def self.compareXML(doc1)
+    @doc1 = doc1
     if doc1.class == Nokogiri::XML::Document
       collectXPaths(doc1.root)
     else
@@ -13,10 +14,10 @@ module DiffXML
   end
 
   def self.getPath(node, path = nil)
-    if path.parent.name.eql? 'document'
-      path
+    if node.parent.name.eql? 'document'
+      return path
     else
-      getPath(node.parent, "#{node.parent}/#{path}")
+      getPath(node.parent, "#{node.parent.name}/#{path}")
     end
   end
 
@@ -27,10 +28,13 @@ module DiffXML
   def self.collectXPaths(doc)
     doc.element_children.each do |child|
       if child.element_children.empty?
-        @xpathArray.push(self.getPath(child))
+        @xpathArray.push(getPath(child,child.name)) unless child.content.empty?
       else
-        compareXML(child)
+        collectXPaths(child)
       end
     end
+  end
+  def self.getXPathArray
+    @xpathArray
   end
 end
