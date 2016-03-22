@@ -16,7 +16,7 @@ describe DiffXML do
                         <firstthird><finalChild>asdf</finalChild></firstthird></third><fourth></forth></doc>")
    DiffXML.collectXPaths(xml)
    expect(DiffXML.getXPathArray.size).to be 3
-   expect(DiffXML.getXPathArray).to eq %w(doc/first doc/second doc/third/firstthird/finalChild)
+   expect(DiffXML.getXPathArray).to eq %w[doc/first doc/second doc/third/firstthird/finalChild]
   end
 
 end
