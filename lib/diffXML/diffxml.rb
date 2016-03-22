@@ -4,14 +4,12 @@ require 'Nokogiri'
 module DiffXML
   @xpathArray = []
   def self.compareXML(doc1, doc2)
-    @doc1 = doc1
-    @doc2 = doc2
     if doc1.class == Nokogiri::XML::Document
       collectXPaths(doc1.root)
     else
       collectXPaths(doc1)
     end
-    @xpathArray.each {|element| compareToPath(element)}
+    @xpathArray.each {|element| compareToPath(element,doc1, doc2)}
   end
 
   def self.getPath(node, path = nil)
@@ -22,8 +20,8 @@ module DiffXML
     end
   end
 
-  def self.compareToPath(path)
-    @doc2.search(path, @doc1.collect_namespaces)
+  def self.compareToPath(path, doc1, doc2)
+    doc2.search(path, doc1.collect_namespaces)
   end
 
   def self.collectXPaths(doc)
