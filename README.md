@@ -11,7 +11,7 @@ This is an alternate method to a project I was working on, as such, there are no
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'diff-xml'
+gem 'diffxml'
 ```
 
 And then execute:
@@ -20,7 +20,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install diff-xml
+    $ gem install diffxml
 
 ## Usage
 
