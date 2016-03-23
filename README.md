@@ -24,7 +24,15 @@ Or install it yourself as:
 
 ## Usage
 
-coming soon.
+Pass two xml documents to the gem using 
+```ruby
+DiffXML.compareXML(doc1, doc2)
+```
+the returned value will be an array with the XPaths of all nodes that were not matched.
+
+## To Do
+Plans to return the values of both nodes that are at the XPath in the array, as well as the XPath location are in the works.
+General upkeep and a more rigorous test set are also planned.
 
 ## Contributing
 
