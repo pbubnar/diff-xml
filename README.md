@@ -33,8 +33,9 @@ the returned value will be an array with the XPaths of all nodes that were not m
 ## To Do
 Plans to return the values of both nodes that are at the XPath in the array, as well as the XPath location are in the works.
 General upkeep and a more rigorous test set are also planned.
+RDoc implementation for documentation.
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/pbubnar/diff-xml.
+Bug reports and pull requests are welcome on GitHub at https://github.com/pbubnar/diffxml.
 
