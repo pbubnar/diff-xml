@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
 Gem::Specification.new do |spec|
   spec.name          = "diffxml"
-  spec.version       = '0.1.2'
+  spec.version       = '0.1.3'
   spec.authors       = ["Jake Bubnar"]
   spec.email         = ["jake@pjbapps.com"]
   spec.licenses       = ["MIT"]
@@ -20,7 +20,7 @@ Gem::Specification.new do |spec|
   spec.test_files = ['rspec/diffXML_spec.rb']
 
   spec.add_development_dependency "bundler", "~> 1.11"
-  spec.add_development_dependency "rspec", "~>3.4", ">= 3.4.0"
+  spec.add_development_dependency "rspec", "~>3.4"
   spec.add_development_dependency "rake", "~> 10.0"
-  spec.add_runtime_dependency "nokogiri", "~> 1.6", ">= 1.6.7.2"
+  spec.add_runtime_dependency "nokogiri", "~> 1.6"
 end
