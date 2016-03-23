@@ -27,7 +27,7 @@ Require the gem with:
 ```ruby
 require 'DiffXML'
 ```
-This will be fixed in an update to allow a proper require
+
 
 Pass two xml documents to the gem using 
 ```ruby
