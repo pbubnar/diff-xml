@@ -9,7 +9,7 @@ module DiffXML
     else
       collectXPaths(doc1)
     end
-    @xpathArray.each {|element| compareToPath(element,doc1, doc2)}
+    @xpathArray.delete_if {|element| compareToPath(element,doc1, doc2)}
   end
 
   def self.getPath(node, path = nil)
@@ -22,7 +22,6 @@ module DiffXML
 
   def self.compareToPath(path, doc1, doc2)
     doc2.search(path, doc1.collect_namespaces).to_s == doc1.search(path, doc1.collect_namespaces).to_s
-    @xpathArray.delete path
   end
 
   def self.collectXPaths(doc)
@@ -34,6 +33,7 @@ module DiffXML
       end
     end
   end
+
   def self.getXPathArray
     @xpathArray
   end

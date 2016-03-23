@@ -8,6 +8,10 @@ describe DiffXML do
                         <firstthird><finalChild>asdf</finalChild></firstthird></third><fourth></fourth></doc>")
   xml2 = Nokogiri::XML("<doc xmlns='foo:bar'><first>foo  bar baz</first><second>things</second><third>
                         <firstthird><finalChild>asdf</finalChild></firstthird></third><fourth></fourth></doc>")
+  xml3 = Nokogiri::XML("<doc xmlns='foo:bar'><first>foo  bar baz</first><second>things</second><third>
+                        <firstthird><finalChild>asfd</finalChild></firstthird></third><fourth></fourth></doc>")
+
+
   it 'should return an XPath for a given node' do
     node = xml1.element_children[0].element_children[2].element_children[0].element_children[0]
     expect(DiffXML.getPath(node, node.name)).to eql '/doc/third/firstthird/finalChild'
@@ -21,6 +25,15 @@ describe DiffXML do
 
   it 'should retrieve and compare a node from a second document using a Path' do
     expect(DiffXML.compareToPath('doc/first',xml1,xml2)).to eql true
+  end
+
+  it 'should go through 2 XMLs removing XPaths from the array as they are found' do
+    expect(DiffXML.compareXML(xml1,xml2).size).to be 0
+  end
+
+  it 'should return the differences in the event of a non match' do
+    expect(DiffXML.compareXML(xml1,xml3).size).to be 1
+    expect(DiffXML.getXPathArray[0].to_s).to eql 'doc/third/firstthird/finalChild'
   end
 
 end
