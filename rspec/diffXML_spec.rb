@@ -14,13 +14,13 @@ describe DiffXML do
 
   it 'should return an XPath for a given node' do
     node = xml1.element_children[0].element_children[2].element_children[0].element_children[0]
-    expect(DiffXML.getPath(node, node.name)).to eql '/doc/third/firstthird/finalChild'
+    expect(DiffXML.getPath(node, node.name)).to eql 'doc/third/firstthird/finalChild'
   end
 
   it 'should Collect all XPaths of the children into an array' do
    DiffXML.collectXPaths(xml1)
    expect(DiffXML.getXPathArray.size).to be 3
-   expect(DiffXML.getXPathArray).to eql %w[/doc/first /doc/second /doc/third/firstthird/finalChild]
+   expect(DiffXML.getXPathArray).to eql %w[doc/first doc/second doc/third/firstthird/finalChild]
   end
 
   it 'should retrieve and compare a node from a second document using a Path' do
