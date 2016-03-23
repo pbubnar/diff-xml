@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["jake@pjbapps.com"]
 
   spec.summary       = 'A simple xml comparison tool to get a list of diffs between two files passed to it'
-  spec.description   = 'Goes through each child to find the paths, and compares them to the path in the second file'
+  spec.description   = 'Goes through each child to find the XPaths of each final child, and compares them to the path in the second file'
   spec.homepage      = 'https://github.com/pbubnar/diff-xml'
 
   # Prevent pushing this gem to RubyGems.org by setting 'allowed_push_host', or
@@ -21,11 +21,10 @@ Gem::Specification.new do |spec|
   end
 
   spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
-  spec.bindir        = "exe"
-  spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
 
   spec.add_development_dependency "bundler", "~> 1.11"
   spec.add_development_dependency "rspec"
+  spec.add_development_dependency "rake", "~> 10.0"
   spec.add_runtime_dependency "nokogiri"
 end
