@@ -1,4 +1,3 @@
-# require 'version'
 require 'Nokogiri'
 
 module DiffXML
