@@ -14,14 +14,15 @@ module DiffXML
 
   def self.getPath(node, path = nil)
     if node.parent.name.eql? 'document'
-      return "/#{path}"
+      return path
     else
       getPath(node.parent, "#{node.parent.name}/#{path}")
     end
   end
 
   def self.compareToPath(path, doc1, doc2)
-    doc2.search(path, doc1.collect_namespaces)
+    doc2.search(path, doc1.collect_namespaces).to_s == doc1.search(path, doc1.collect_namespaces).to_s
+    @xpathArray.delete path
   end
 
   def self.collectXPaths(doc)
