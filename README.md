@@ -8,8 +8,6 @@ This is an alternate method to a project I was working on, as such, there are no
 
 ## Installation
 
-### Once the first version of the gem is live:
-
 Add this line to your application's Gemfile:
 
 ```ruby
