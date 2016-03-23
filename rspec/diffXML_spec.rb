@@ -17,6 +17,11 @@ describe DiffXML do
     expect(DiffXML.getPath(node, node.name)).to eql 'doc/third/firstthird/finalChild'
   end
 
+  it 'should return an XPath for a given node when no name is passed in' do
+    node = xml1.element_children[0].element_children[2].element_children[0].element_children[0]
+    expect(DiffXML.getPath(node)).to eql 'doc/third/firstthird/finalChild'
+  end
+
   it 'should Collect all XPaths of the children into an array' do
    DiffXML.collectXPaths(xml1)
    expect(DiffXML.getXPathArray.size).to be 3

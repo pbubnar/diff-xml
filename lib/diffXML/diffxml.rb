@@ -15,7 +15,11 @@ module DiffXML
     if node.parent.name.eql? 'document'
       return path
     else
-      getPath(node.parent, "#{node.parent.name}/#{path}")
+      if path.nil?
+        getPath(node, node.name)
+      else
+        getPath(node.parent, "#{node.parent.name}/#{path}")
+      end
     end
   end
 
