@@ -25,7 +25,7 @@ Or install it yourself as:
 ## Usage
 Require the gem with:
 ```ruby
-require 'diffXML/diffxml'
+require 'DiffXML'
 ```
 This will be fixed in an update to allow a proper require
 
