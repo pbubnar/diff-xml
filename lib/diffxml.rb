@@ -10,8 +10,7 @@ module DiffXML
     else
       DiffXML::Utils.collectXPaths(doc1, @xpathArray)
     end
-    @xpathArray.delete_if.with_index do |element, i|
-      puts "iteration #{i} and #{element}"
+    @xpathArray.delete_if do |element|
       compareToPath(element, doc1, doc2)
     end
   end
