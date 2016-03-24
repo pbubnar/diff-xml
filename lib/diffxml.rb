@@ -1,4 +1,5 @@
 require 'Nokogiri'
+require 'DiffXML/utils'
 
 module DiffXML
   @xpathArray = []
