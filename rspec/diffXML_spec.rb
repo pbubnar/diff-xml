@@ -29,7 +29,7 @@ describe DiffXML do
   end
 
   it 'should retrieve and compare a node from a second document using a Path' do
-    expect(DiffXML::Utils.compareToPath('doc/first',xml1,xml2)).to eql true
+    expect(DiffXML.compareToPath('doc/first',xml1,xml2)).to eql true
   end
 
   it 'should go through 2 XMLs removing XPaths from the array as they are found' do

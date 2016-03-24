@@ -4,12 +4,12 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
 Gem::Specification.new do |spec|
   spec.name          = "diffxml"
-  spec.version       = '0.2.0'
+  spec.version       = '0.2.1'
   spec.authors       = ["Jake Bubnar"]
   spec.email         = ["jake@pjbapps.com"]
   spec.licenses       = ["MIT"]
   spec.summary       = 'A simple xml comparison tool to get a list of diffs between two files passed to it'
-  spec.description   = 'Goes through each child to find the XPaths of each final child, and compares them to the path in the second file'
+  spec.description   = 'Goes through each child to find the XPaths of each final child, and compares them to the path in the second file, returning the differences.'
   spec.homepage      = 'https://github.com/pbubnar/diff-xml'
 
   # Prevent pushing this gem to RubyGems.org by setting 'allowed_push_host', or
