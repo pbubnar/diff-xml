@@ -1,7 +1,7 @@
 require 'nokogiri'
 require 'rspec'
 require 'rspec/matchers'
-require_relative '../lib/diffXML/diffxml'
+require_relative '../lib/diffxml'
 
 describe DiffXML do
   xml1 = Nokogiri::XML("<doc xmlns='foo:bar'><first>foo  bar baz</first><second>things</second><third>
@@ -39,6 +39,12 @@ describe DiffXML do
   it 'should return the differences in the event of a non match' do
     expect(DiffXML.compareXML(xml1,xml3).size).to be 1
     expect(DiffXML.getXPathArray[0].to_s).to eql 'doc/third/firstthird/finalChild'
+  end
+
+  it 'should handle large xml documents without running out of memory' do
+    largeXML1 = Nokogiri::XML(File.read('./wikimediaxml_test.xml'))
+    largeXML2 = Nokogiri::XML(File.read('./wikimediaxml_test.xml'))
+    expect(DiffXML.compareXML(largeXML1,largeXML2).size).to be 0
   end
 
 end

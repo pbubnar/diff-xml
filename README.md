@@ -39,12 +39,14 @@ the returned value will be an array with the XPaths of all nodes that were not m
 * Plans to return the values of both nodes that are at the XPath in the array, as well as the XPath location are in the works.
 * General upkeep and a more rigorous test set are also planned.
 * RDoc implementation for documentation.
-* optimize searches
+* optimize searches: the memory handling has been improved, however, the search still does not differentiate between nodes with the same path, meaning xmls in different orders may report false negatives(untested), and speed is awful past a certain point
+because it just compares the string of the node set as opposed to comparing each node in the set individually.
 * Add ignore capabilities for XPaths
 * Refactor Utility methods into seperate file
 
 ## Known Issues
-* With large XML documents, specifically with tested documents over 1500 elements, but possibly fewer, the gem will reach a point where it cannot allocate memory.
+* ~~With large XML documents, specifically with tested documents over 1500 elements, but possibly fewer, the gem will reach a point where it cannot allocate memory.~~
+  * Fixed in latest commit, will be applied with version 0.2.0 release, optimization of the compare is still needed
 
 ## Contributing
 

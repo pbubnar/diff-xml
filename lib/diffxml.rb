@@ -8,7 +8,11 @@ module DiffXML
     else
       collectXPaths(doc1)
     end
-    @xpathArray.delete_if {|element| compareToPath(element,doc1, doc2)}
+    @xpathArray.map!.with_index do |element, i|
+      GC.start if i % 50 == 0
+      puts "iteration #{i} and #{element}"
+      nil if compareToPath(element, doc1, doc2)
+    end
   end
 
   def self.getPath(node, path = nil)
