@@ -15,7 +15,7 @@ module DiffXML
     if !ignores.empty?
       ignores.each do |ignore|
         if css
-          @xpathArray.delete(cssClass.xpath_for(ignore))
+          @xpathArray.delete(cssClass.xpath_for(ignore)[0])
         else
         @xpathArray.delete(ignore)
         end
