@@ -4,6 +4,7 @@ require 'DiffXML/utils'
 module DiffXML
   @xpathArray = []
   def self.compareXML(doc1, doc2, ignores = [], css = false)
+    raise "Expected true or false for css parameter, got #{css}"  unless css.is_a? TrueClass or css.is_a? FalseClass
     @namespaces = doc1.collect_namespaces
     cssClass = Nokogiri::CSS
     if doc1.class == Nokogiri::XML::Document
