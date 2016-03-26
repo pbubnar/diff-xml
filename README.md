@@ -36,6 +36,7 @@ DiffXML.compareXML(doc1, doc2)
 the returned value will be an array with the XPaths of all nodes that were not matched.
 
 If you are interested in ignoring specific children you can pass in css selectors or XPaths with the same method
+
 CSS with:
 ```ruby
 DiffXML.compareXML(doc1, doc2, ArrayOfIgnores, true)
