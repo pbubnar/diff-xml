@@ -50,3 +50,7 @@ because it just compares the string of the node set as opposed to comparing each
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/pbubnar/diffxml.
 
+## Sources
+
+The test xml data for the wikimedia xml came from http://dumps.wikimedia.your.org/backups-of-old-wikis.html
+
