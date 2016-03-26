@@ -35,13 +35,22 @@ DiffXML.compareXML(doc1, doc2)
 ```
 the returned value will be an array with the XPaths of all nodes that were not matched.
 
+If you are interested in ignoring specific children you can pass in css selectors or XPaths with the same method
+CSS with:
+```ruby
+DiffXML.compareXML(doc1, doc2, ArrayOfIgnores, true)
+```
+XPath with:
+```ruby
+DiffXML.compareXML(doc1, doc2, ArrayOfIgnores)
+```
+
 ## To Do
 * Plans to return the values of both nodes that are at the XPath in the array, as well as the XPath location are in the works.
 * General upkeep and a more rigorous test set are also planned.
 * RDoc implementation for documentation.
 * optimize searches: the memory handling has been improved, however, the search still does not differentiate between nodes with the same path, meaning xmls in different orders may report false negatives(untested)
 because it just compares the string of the node set as opposed to comparing each node in the set individually.
-* Add ignore capabilities for XPaths **DONE v.0.3.0 will have an option to ignore using XPath or CSS selectors**
 * Add attribute comparison
 
 ## Known Issues
