@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
 Gem::Specification.new do |spec|
   spec.name          = "diffxml"
-  spec.version       = '0.2.1'
+  spec.version       = '0.3.0'
   spec.authors       = ["Jake Bubnar"]
   spec.email         = ["jake@pjbapps.com"]
   spec.licenses       = ["MIT"]
